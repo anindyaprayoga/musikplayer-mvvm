@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:musikplayer_mvvm/assets/app_images.dart';
@@ -16,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
   late TabController _tabController;
 
+  @override
   void initState(){
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   right: 60
                 ),
                 child: Image.asset(
@@ -78,11 +78,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     return TabBar(
       controller: _tabController,
       labelColor: context.isDarkMode ? Colors.white : Colors.black,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: 40,
         horizontal: 16
       ),
-      tabs: [
+      tabs: const [
       Text(
         'News'
       ),
